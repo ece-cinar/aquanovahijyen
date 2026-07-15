@@ -1,16 +1,1279 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AquaNova</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AquaNova; içme suyu deposu temizliği, su sebili hijyeni, dezenfeksiyon ve periyodik bakım hizmetleri sunar." />
+  <meta name="keywords" content="su deposu temizliği, su sebili temizliği, Denizli su hijyeni, depo dezenfeksiyonu, AquaNova" />
+  <meta name="theme-color" content="#062b4f" />
+
+  <title>AquaNova | Profesyonel Su Hijyeni Hizmetleri</title>
+
+  <style>
+    :root {
+      --navy: #062b4f;
+      --navy-2: #0b3c68;
+      --cyan: #06a9c6;
+      --cyan-2: #34c7dd;
+      --light: #eef9fc;
+      --white: #ffffff;
+      --text: #183044;
+      --muted: #63788a;
+      --border: rgba(6, 43, 79, 0.12);
+      --shadow: 0 18px 50px rgba(6, 43, 79, 0.12);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 96px 0;
+    }
+
+    .section.light {
+      background: var(--light);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+      color: var(--cyan);
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      background: var(--cyan);
+    }
+
+    h1, h2, h3 {
+      margin-top: 0;
+      line-height: 1.12;
+    }
+
+    h1 {
+      font-size: clamp(44px, 7vw, 78px);
+      margin-bottom: 22px;
+    }
+
+    h2 {
+      font-size: clamp(32px, 4vw, 50px);
+      margin-bottom: 18px;
+      color: var(--navy);
+    }
+
+    h3 {
+      font-size: 22px;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-top: 0;
+    }
+
+    .lead {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .topbar {
+      background: #041f39;
+      color: rgba(255,255,255,.78);
+      font-size: 14px;
+    }
+
+    .topbar-inner {
+      min-height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .topbar a {
+      text-decoration: none;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(6,43,79,.08);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      width: 44px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 50% 50% 55% 45% / 62% 62% 38% 38%;
+      background: linear-gradient(160deg, var(--cyan-2), var(--navy));
+      color: white;
+      font-size: 22px;
+      transform: rotate(8deg);
+      box-shadow: 0 8px 25px rgba(6,169,198,.28);
+    }
+
+    .brand-text strong {
+      display: block;
+      color: var(--navy);
+      font-size: 22px;
+      letter-spacing: .02em;
+    }
+
+    .brand-text span {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--navy);
+    }
+
+    .nav-links a:hover {
+      color: var(--cyan);
+    }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: var(--light);
+      color: var(--navy);
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 0 24px;
+      border: 0;
+      border-radius: 14px;
+      background: var(--cyan);
+      color: white;
+      text-decoration: none;
+      font-weight: 800;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 25px rgba(6,169,198,.25);
+    }
+
+    .btn.secondary {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,.5);
+      color: white;
+    }
+
+    .btn.white {
+      background: white;
+      color: var(--navy);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 760px;
+      display: grid;
+      align-items: center;
+      color: white;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(52,199,221,.35), transparent 28%),
+        radial-gradient(circle at 65% 70%, rgba(6,169,198,.23), transparent 32%),
+        linear-gradient(120deg, #031d35 0%, #062b4f 52%, #087a99 100%);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 780px;
+      height: 780px;
+      right: -250px;
+      bottom: -420px;
+      border-radius: 50%;
+      border: 80px solid rgba(255,255,255,.08);
+      box-shadow:
+        0 0 0 70px rgba(255,255,255,.04),
+        0 0 0 140px rgba(255,255,255,.025);
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 64px;
+      align-items: center;
+      padding: 92px 0 86px;
+    }
+
+    .hero h1 span {
+      color: var(--cyan-2);
+    }
+
+    .hero p {
+      max-width: 680px;
+      color: rgba(255,255,255,.78);
+      font-size: 19px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin: 30px 0 36px;
+    }
+
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      max-width: 640px;
+    }
+
+    .hero-point {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255,255,255,.9);
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .hero-point span {
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(255,255,255,.12);
+    }
+
+    .hero-card {
+      position: relative;
+      min-height: 510px;
+      border-radius: 34px;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(4,31,57,.15), rgba(4,31,57,.55)),
+        url("https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1000&q=85") center/cover;
+      box-shadow: 0 35px 80px rgba(0,0,0,.32);
+      border: 1px solid rgba(255,255,255,.18);
+    }
+
+    .hero-card-badge {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 24px;
+      padding: 22px;
+      border-radius: 20px;
+      background: rgba(3,29,53,.76);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,.15);
+    }
+
+    .hero-card-badge strong {
+      display: block;
+      font-size: 21px;
+      margin-bottom: 6px;
+    }
+
+    .hero-card-badge span {
+      color: rgba(255,255,255,.72);
+      font-size: 14px;
+    }
+
+    .trust-strip {
+      margin-top: -42px;
+      position: relative;
+      z-index: 5;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      background: white;
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .trust-item {
+      padding: 28px 18px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+
+    .trust-item:last-child {
+      border-right: 0;
+    }
+
+    .trust-icon {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 12px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: var(--light);
+      color: var(--cyan);
+      font-size: 22px;
+    }
+
+    .trust-item strong {
+      display: block;
+      color: var(--navy);
+      font-size: 14px;
+    }
+
+    .services-grid,
+    .reasons-grid,
+    .sectors-grid,
+    .plans-grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .services-grid {
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 42px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: 0 10px 35px rgba(6,43,79,.06);
+    }
+
+    .service-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::after {
+      content: "";
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      right: -60px;
+      top: -60px;
+      border-radius: 50%;
+      background: rgba(6,169,198,.08);
+    }
+
+    .service-icon {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 20px;
+      border-radius: 18px;
+      background: linear-gradient(145deg, var(--navy), var(--cyan));
+      color: white;
+      font-size: 26px;
+    }
+
+    .check-list {
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 0;
+    }
+
+    .check-list li {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      color: var(--cyan);
+      font-weight: 900;
+    }
+
+    .risk-layout,
+    .why-layout,
+    .contact-layout {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .risk-visual {
+      position: relative;
+      min-height: 540px;
+      border-radius: 34px;
+      background:
+        linear-gradient(rgba(6,43,79,.05), rgba(6,43,79,.35)),
+        url("https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=1000&q=85") center/cover;
+      box-shadow: var(--shadow);
+    }
+
+    .risk-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .risk-item {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      padding: 16px;
+      border-radius: 16px;
+      background: white;
+      border: 1px solid var(--border);
+    }
+
+    .risk-item span {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border-radius: 12px;
+      background: var(--light);
+      color: var(--cyan);
+    }
+
+    .reasons-grid {
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 28px;
+    }
+
+    .reason {
+      display: flex;
+      gap: 14px;
+      padding: 18px;
+      border-radius: 16px;
+      background: white;
+      border: 1px solid var(--border);
+    }
+
+    .reason-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border-radius: 12px;
+      background: var(--navy);
+      color: white;
+    }
+
+    .reason strong {
+      display: block;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .reason small {
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .why-image {
+      min-height: 560px;
+      border-radius: 34px;
+      background:
+        linear-gradient(rgba(6,43,79,.08), rgba(6,43,79,.24)),
+        url("https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=85") center/cover;
+      box-shadow: var(--shadow);
+    }
+
+    .plans-grid {
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 36px;
+    }
+
+    .plan {
+      text-align: center;
+      background: var(--navy);
+      color: white;
+      border-radius: 22px;
+      padding: 30px 18px;
+      transition: .2s ease;
+    }
+
+    .plan.featured {
+      background: linear-gradient(145deg, var(--cyan), #087c98);
+      transform: translateY(-8px);
+    }
+
+    .plan:hover {
+      transform: translateY(-6px);
+    }
+
+    .plan-icon {
+      font-size: 34px;
+      margin-bottom: 14px;
+    }
+
+    .plan strong {
+      display: block;
+      font-size: 22px;
+    }
+
+    .plan span {
+      color: rgba(255,255,255,.68);
+      font-size: 13px;
+    }
+
+    .sectors-grid {
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 36px;
+    }
+
+    .sector {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 20px;
+      border-radius: 18px;
+      background: white;
+      border: 1px solid var(--border);
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    .sector span {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      background: var(--light);
+      color: var(--cyan);
+    }
+
+    .cta {
+      padding: 72px 0;
+      background:
+        radial-gradient(circle at 88% 30%, rgba(52,199,221,.28), transparent 25%),
+        linear-gradient(120deg, #031d35, #087c98);
+      color: white;
+    }
+
+    .cta-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 36px;
+    }
+
+    .cta h2 {
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .cta p {
+      color: rgba(255,255,255,.72);
+      margin-bottom: 0;
+    }
+
+    .contact-card {
+      background: white;
+      border-radius: 28px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .field {
+      display: grid;
+      gap: 7px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      padding: 14px 15px;
+      font: inherit;
+      color: var(--text);
+      background: #fbfdfe;
+      outline: none;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--cyan);
+      box-shadow: 0 0 0 4px rgba(6,169,198,.1);
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .contact-info {
+      display: grid;
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .contact-line {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .contact-line span {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border-radius: 13px;
+      background: var(--light);
+      color: var(--cyan);
+    }
+
+    footer {
+      background: #031d35;
+      color: rgba(255,255,255,.68);
+      padding: 34px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .footer-inner strong {
+      color: white;
+    }
+
+    .floating-whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #25d366;
+      color: white;
+      font-size: 26px;
+      text-decoration: none;
+      box-shadow: 0 14px 34px rgba(37,211,102,.32);
+      z-index: 999;
+    }
+
+    @media (max-width: 980px) {
+      .nav-links {
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        top: 84px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 20px;
+        background: white;
+        border-radius: 18px;
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .desktop-cta {
+        display: none;
+      }
+
+      .hero-grid,
+      .risk-layout,
+      .why-layout,
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        min-height: 440px;
+      }
+
+      .trust-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .trust-item:nth-child(2n) {
+        border-right: 0;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .plans-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .sectors-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .cta-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(100% - 28px, 1160px);
+      }
+
+      .section {
+        padding: 72px 0;
+      }
+
+      .topbar {
+        display: none;
+      }
+
+      .brand-text span {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-grid {
+        padding: 72px 0 80px;
+      }
+
+      .hero-points,
+      .risk-grid,
+      .reasons-grid,
+      .plans-grid,
+      .sectors-grid,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions,
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .trust-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .trust-item {
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .trust-item:last-child {
+        border-bottom: 0;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 
-<body style="font-family:Arial;background:#0B2E4F;color:white;text-align:center;padding-top:120px">
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div>Profesyonel Su Hijyeni ve Dezenfeksiyon Hizmetleri</div>
+      <div>
+        <a href="tel:+905073856132">0 507 385 61 32</a>
+        &nbsp;•&nbsp;
+        Denizli / Merkezefendi
+      </div>
+    </div>
+  </div>
 
-<h1>Profesyonel Su Hijyeni Hizmetleri</h1>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#anasayfa" aria-label="AquaNova ana sayfa">
+        <div class="brand-mark">💧</div>
+        <div class="brand-text">
+          <strong>AquaNova</strong>
+          <span>Temiz Su, Güvenli Yaşam</span>
+        </div>
+      </a>
 
-<p>GitHub Pages başarıyla çalışıyor 🎉</p>
+      <nav class="nav-links" id="navLinks">
+        <a href="#anasayfa">Ana Sayfa</a>
+        <a href="#hizmetler">Hizmetler</a>
+        <a href="#neden-biz">Neden Biz?</a>
+        <a href="#sektorler">Hizmet Alanları</a>
+        <a href="#iletisim">İletişim</a>
+      </nav>
 
+      <a class="btn desktop-cta" href="#iletisim">Teklif Al</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Menüyü aç">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="anasayfa">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow" style="color:#7cecff">Profesyonel ve raporlu hizmet</div>
+          <h1>Profesyonel <span>Su Hijyeni</span> Hizmetleri</h1>
+          <p>
+            İçme suyu depoları ve su sebilleri için profesyonel temizlik,
+            dezenfeksiyon, ölçüm ve periyodik bakım çözümleri sunuyoruz.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn white" href="tel:+905073856132">📞 Hemen Ara</a>
+            <a class="btn secondary" href="https://wa.me/905073856132?text=Merhaba%2C%20su%20hijyeni%20hizmetleri%20hakk%C4%B1nda%20teklif%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp’tan Ulaş</a>
+          </div>
+
+          <div class="hero-points">
+            <div class="hero-point"><span>✓</span> Gıda ile temasa uygun ürünler</div>
+            <div class="hero-point"><span>✓</span> Eğitimli profesyonel ekip</div>
+            <div class="hero-point"><span>✓</span> Ölçüm ve raporlama</div>
+            <div class="hero-point"><span>✓</span> Planlı bakım sistemi</div>
+          </div>
+        </div>
+
+        <div class="hero-card" role="img" aria-label="Profesyonel temizlik personeli">
+          <div class="hero-card-badge">
+            <strong>Temiz su, sağlıklı misafir.</strong>
+            <span>Hijyen standartlarınızı güçlendiren kurumsal çözümler.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-strip">
+      <div class="container trust-grid">
+        <div class="trust-item">
+          <div class="trust-icon">🛡️</div>
+          <strong>Güvenilir Hizmet</strong>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">👥</div>
+          <strong>Profesyonel Ekip</strong>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">🏅</div>
+          <strong>Yüksek Hijyen Standardı</strong>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">⏱️</div>
+          <strong>Zamanında Servis</strong>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">📋</div>
+          <strong>Raporlu İşlem</strong>
+        </div>
+      </div>
+    </div>
+
+    <section class="section" id="hizmetler">
+      <div class="container">
+        <div class="eyebrow">Hizmetlerimiz</div>
+        <h2>İşletmeniz için kapsamlı hijyen çözümleri</h2>
+        <p class="lead">
+          Su sistemlerinde oluşabilecek bakteri, biofilm, tortu, kireç ve kötü koku risklerini
+          profesyonel ekipmanlarla ortadan kaldırıyoruz.
+        </p>
+
+        <div class="services-grid">
+          <article class="card service-card">
+            <div class="service-icon">💧</div>
+            <h3>İçme Suyu Deposu Temizliği</h3>
+            <p>Depoların boşaltılması, mekanik temizliği, dezenfeksiyonu ve kontrolü.</p>
+            <ul class="check-list">
+              <li>Yüzeylerin mekanik temizliği</li>
+              <li>Onaylı dezenfektan uygulaması</li>
+              <li>Durulama ve serbest klor ölçümü</li>
+              <li>Servis formu ve hijyen raporu</li>
+            </ul>
+          </article>
+
+          <article class="card service-card">
+            <div class="service-icon">🚰</div>
+            <h3>Su Sebili Temizliği</h3>
+            <p>Sebillerde zamanla oluşan biofilm, bakteri, küf ve kireç kalıntılarının temizliği.</p>
+            <ul class="check-list">
+              <li>İç hazne temizliği</li>
+              <li>Musluk ve soğutma haznesi temizliği</li>
+              <li>Dezenfeksiyon ve durulama</li>
+              <li>Son kontrol</li>
+            </ul>
+          </article>
+
+          <article class="card service-card">
+            <div class="service-icon">📅</div>
+            <h3>Periyodik Bakım Sistemi</h3>
+            <p>İşletmenize özel bakım takvimi ve düzenli hijyen kayıtları.</p>
+            <ul class="check-list">
+              <li>Öncelikli servis</li>
+              <li>Hatırlatma sistemi</li>
+              <li>Düzenli raporlama</li>
+              <li>Hijyen kayıtlarının arşivlenmesi</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light">
+      <div class="container risk-layout">
+        <div class="risk-visual"></div>
+
+        <div>
+          <div class="eyebrow">Neden su hijyeni?</div>
+          <h2>Görünmeyen riskleri ortadan kaldırın</h2>
+          <p class="lead">
+            Düzenli bakım yapılmayan sistemler işletmenizin hijyen standartlarını
+            ve su kalitesini olumsuz etkileyebilir.
+          </p>
+
+          <div class="risk-grid">
+            <div class="risk-item"><span>🦠</span><strong>Bakteri oluşumu</strong></div>
+            <div class="risk-item"><span>🧫</span><strong>Biofilm tabakası</strong></div>
+            <div class="risk-item"><span>🪨</span><strong>Tortu birikimi</strong></div>
+            <div class="risk-item"><span>◻️</span><strong>Kireç oluşumu</strong></div>
+            <div class="risk-item"><span>〰️</span><strong>Kötü koku</strong></div>
+            <div class="risk-item"><span>💧</span><strong>Kalite düşüşü</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="neden-biz">
+      <div class="container why-layout">
+        <div>
+          <div class="eyebrow">Neden AquaNova?</div>
+          <h2>Sağlığınızı koruyan profesyonel yaklaşım</h2>
+          <p class="lead">
+            Misafir ve çalışan sağlığını korurken işletmenizin hijyen standartlarını
+            en üst seviyeye taşıyoruz.
+          </p>
+
+          <div class="reasons-grid">
+            <div class="reason">
+              <div class="reason-icon">👥</div>
+              <div><strong>Profesyonel ekip</strong><small>Eğitimli ve deneyimli personel.</small></div>
+            </div>
+            <div class="reason">
+              <div class="reason-icon">💧</div>
+              <div><strong>Uygun dezenfektanlar</strong><small>Gıda ile temasa uygun ürünler.</small></div>
+            </div>
+            <div class="reason">
+              <div class="reason-icon">📋</div>
+              <div><strong>Raporlama sistemi</strong><small>Detaylı işlem ve ölçüm kayıtları.</small></div>
+            </div>
+            <div class="reason">
+              <div class="reason-icon">📆</div>
+              <div><strong>Bakım planı</strong><small>İşletmeye özel periyodik takvim.</small></div>
+            </div>
+            <div class="reason">
+              <div class="reason-icon">🤝</div>
+              <div><strong>Kurumsal hizmet</strong><small>İhtiyaca özel çözüm yaklaşımı.</small></div>
+            </div>
+            <div class="reason">
+              <div class="reason-icon">⚡</div>
+              <div><strong>Hızlı servis</strong><small>Planlı ve zamanında operasyon.</small></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="why-image" role="img" aria-label="Kurumsal otel ortamı"></div>
+      </div>
+    </section>
+
+    <section class="section light">
+      <div class="container">
+        <div class="eyebrow">Bakım seçenekleri</div>
+        <h2>Planlı bakım, güvenli hizmet</h2>
+        <p class="lead">Kullanım yoğunluğunuza göre işletmenize uygun bakım periyodu belirlenir.</p>
+
+        <div class="plans-grid">
+          <div class="plan">
+            <div class="plan-icon">📅</div>
+            <strong>Aylık</strong>
+            <span>Yoğun kullanılan sistemler</span>
+          </div>
+          <div class="plan">
+            <div class="plan-icon">📅</div>
+            <strong>3 Aylık</strong>
+            <span>Kurumsal işletmeler</span>
+          </div>
+          <div class="plan">
+            <div class="plan-icon">📅</div>
+            <strong>6 Aylık</strong>
+            <span>Orta yoğunluklu kullanım</span>
+          </div>
+          <div class="plan featured">
+            <div class="plan-icon">📅</div>
+            <strong>Yıllık</strong>
+            <span>Genel bakım ve kontrol</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sektorler">
+      <div class="container">
+        <div class="eyebrow">Hizmet verdiğimiz alanlar</div>
+        <h2>Hijyenik alanlar, sağlıklı yarınlar</h2>
+        <p class="lead">Farklı ölçeklerdeki işletmelere ihtiyaçlarına uygun hizmet sunuyoruz.</p>
+
+        <div class="sectors-grid">
+          <div class="sector"><span>🏨</span> Oteller</div>
+          <div class="sector"><span>🌴</span> Tatil Köyleri</div>
+          <div class="sector"><span>🛎️</span> Butik Oteller</div>
+          <div class="sector"><span>🏥</span> Hastaneler</div>
+          <div class="sector"><span>🎓</span> Okullar</div>
+          <div class="sector"><span>🏭</span> Fabrikalar</div>
+          <div class="sector"><span>🏛️</span> Kamu Kurumları</div>
+          <div class="sector"><span>🏢</span> İş Merkezleri</div>
+          <div class="sector"><span>🏘️</span> Siteler</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container cta-inner">
+        <div>
+          <h2>Temiz su, güvenli yaşam için bizimle iletişime geçin.</h2>
+          <p>İşletmeniz için ücretsiz ön değerlendirme ve teklif alın.</p>
+        </div>
+        <a class="btn white" href="tel:+905073856132">0 507 385 61 32</a>
+      </div>
+    </section>
+
+    <section class="section light" id="iletisim">
+      <div class="container contact-layout">
+        <div>
+          <div class="eyebrow">İletişim</div>
+          <h2>Teklif talebinizi iletin</h2>
+          <p class="lead">
+            Formu doldurduğunuzda bilgileriniz WhatsApp mesajına dönüştürülür.
+            Böylece herhangi bir ücretli form hizmetine ihtiyaç duymazsınız.
+          </p>
+
+          <div class="contact-info">
+            <div class="contact-line">
+              <span>📞</span>
+              <div><strong>Telefon</strong><br><a href="tel:+905073856132">0 507 385 61 32</a></div>
+            </div>
+            <div class="contact-line">
+              <span>📍</span>
+              <div><strong>Adres</strong><br>Şemikler Mah. Hüseyin Çokal Cd. 65/A-B<br>Merkezefendi / Denizli</div>
+            </div>
+            <div class="contact-line">
+              <span>🕘</span>
+              <div><strong>Hizmet</strong><br>Planlı, zamanında ve raporlu servis</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <form id="whatsappForm">
+            <div class="form-grid">
+              <div class="field">
+                <label for="name">Ad Soyad</label>
+                <input id="name" name="name" type="text" required />
+              </div>
+
+              <div class="field">
+                <label for="company">Firma Adı</label>
+                <input id="company" name="company" type="text" />
+              </div>
+
+              <div class="field">
+                <label for="phone">Telefon</label>
+                <input id="phone" name="phone" type="tel" required />
+              </div>
+
+              <div class="field">
+                <label for="service">Hizmet</label>
+                <select id="service" name="service" required>
+                  <option value="">Seçiniz</option>
+                  <option>İçme Suyu Deposu Temizliği</option>
+                  <option>Su Sebili Temizliği</option>
+                  <option>Periyodik Bakım</option>
+                  <option>Diğer</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label for="message">Açıklama</label>
+                <textarea id="message" name="message" placeholder="İşletmeniz ve talebiniz hakkında kısa bilgi yazın."></textarea>
+              </div>
+
+              <div class="field full">
+                <button class="btn" type="submit">WhatsApp’tan Teklif Gönder</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <strong>AquaNova</strong><br>
+        Profesyonel Su Hijyeni Hizmetleri
+      </div>
+      <div>© <span id="year"></span> AquaNova. Tüm hakları saklıdır.</div>
+    </div>
+  </footer>
+
+  <a class="floating-whatsapp" href="https://wa.me/905073856132?text=Merhaba%2C%20teklif%20almak%20istiyorum." target="_blank" rel="noopener" aria-label="WhatsApp">✆</a>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => navLinks.classList.remove("open"));
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.getElementById("whatsappForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const company = document.getElementById("company").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const service = document.getElementById("service").value;
+      const message = document.getElementById("message").value.trim();
+
+      const text =
+`Merhaba, AquaNova hizmetleri hakkında teklif almak istiyorum.
+
+Ad Soyad: ${name}
+Firma: ${company || "-"}
+Telefon: ${phone}
+Hizmet: ${service}
+Açıklama: ${message || "-"}`;
+
+      const url = "https://wa.me/905073856132?text=" + encodeURIComponent(text);
+      window.open(url, "_blank", "noopener");
+    });
+  </script>
 </body>
 </html>
